@@ -6,8 +6,8 @@
   "scripts": {
     "dev": "nodemon --inspect index.mjs",
     "build": "webpack --config webpack.config.mjs",
-    "start-dev": "node ./dist/bundle.development.js",
-    "start-pro": "node ./dist/bundle.production.js"
+    "development": "node ./dist/bundle.development.js",
+    "production": "node ./dist/bundle.production.js"
   },
   "author": "",
   "license": "ISC",
