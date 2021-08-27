@@ -11,7 +11,7 @@ const ProductConfig = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.development.js',
+    filename: 'bundle.production.js',
   },
   mode: 'production',
   target: 'node',
@@ -38,7 +38,7 @@ const DevConfig = {
   },
   output: {
     path: path.join(__dirname, 'dist'),
-    filename: 'bundle.production.js',
+    filename: 'bundle.development.js',
   },
   mode: 'development',
   target: 'node',
