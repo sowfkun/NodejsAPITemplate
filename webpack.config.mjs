@@ -1,8 +1,10 @@
 import nodeExternals from 'webpack-node-externals';
 import path from 'path';
-
 const __dirname = path.resolve();
 
+/*
+ * config build for production
+ */
 const ProductConfig = {
   entry: {
     server: ['./index.mjs'],
@@ -27,6 +29,9 @@ const ProductConfig = {
   },
 };
 
+/*
+ * config build for development
+ */
 const DevConfig = {
   entry: {
     server: ['./index.mjs'],

@@ -1,4 +1,5 @@
 const Helper = {};
+
 /*
  * format date to specific format
  */

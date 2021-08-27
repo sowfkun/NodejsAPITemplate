@@ -1,10 +1,14 @@
 import express from 'express';
-
-// import routes
-import productRoutes from './product.router.mjs';
-
 const rootRoute = express();
 
+/*
+ * import routes
+ */
+import productRoutes from './product.router.mjs';
+
+/*
+ * use routes
+ */
 rootRoute.use('/products', productRoutes);
 
 export default rootRoute;

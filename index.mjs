@@ -1,4 +1,6 @@
-// import libs
+/*
+ * import libs
+ */
 import express, { json } from 'express';
 import helmet from 'helmet';
 import morgan from 'morgan';
@@ -8,21 +10,30 @@ import path from 'path';
 import { config } from 'dotenv';
 config();
 
-// run database connection
+/*
+ * run database connection
+ */
 import ConnectDatabase from './src/models/db.config.mjs';
 ConnectDatabase();
 
-// import components
+/*
+ * import components
+ */
 import rootRoute from './src/routes/router.mjs';
 
-// defined variable
+/*
+ * defined variable
+ */
 const port = process.env.PORT || 3000;
 const isProduction = process.env.NODE_ENVIRONMENT === 'production';
 const __dirname = path.resolve();
 
 const app = express();
 app.enable('trust proxy');
-// use middleware
+
+/*
+ * use middleware
+ */
 const accessLogStream = rfs.createStream('access.log', {
   interval: '1d', // rotate daily
   path: path.join(__dirname, 'logs'),
@@ -37,7 +48,9 @@ app.use(helmet());
 app.use(cors());
 app.use(json());
 
-// defined route
+/*
+ * defined route
+ */
 app.use('/api', rootRoute);
 
 app.get('/', (req, res) => {
@@ -52,7 +65,9 @@ app.get('*', (req, res) => {
   });
 });
 
-// run server
+/*
+ * run server
+ */
 app.listen(port, () => {
   console.log(`Server is listening on port ${port}`);
 });
