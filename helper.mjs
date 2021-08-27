@@ -16,8 +16,15 @@ Helper.formatDate = (d, format) => {
       return [year, month, day, hour, minute, second].join('-');
     case 'dd/MM/yyyy':
       return [day, month, year].join('/');
+    case 'dd/MM/yyy hh:mm':
+      return [day, month, year].join('/') + ' ' + [hour, minute].join(':');
+    case 'dd/MM/yyy hh:mm:ss':
+      return (
+        [day, month, year].join('/') + ' ' + [hour, minute, second].join(':')
+      );
+
     default:
-      break;
+      return [day, month, year].join('/');
   }
 };
 
