@@ -41,7 +41,7 @@ const DevConfig = {
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.mjs$/,
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
